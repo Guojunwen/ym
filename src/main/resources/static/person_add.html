@@ -1,0 +1,66 @@
+<html lang=zh-CN>
+
+<head>
+    <meta charset=utf-8>
+    <meta http-equiv=X-UA-Compatible content="IE=edge">
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <title>YM队员信息添加</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap-grid.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap-reboot.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet">   
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <form class="form-horizontal" role="form" id="editForm">
+            <div class="alert alert-warning" id="warn">
+                    <a href="#" class="close" data-dismiss="alert">
+                        &times;
+                    </a>
+                    请认真填写个人信息，谢谢配合。
+                </div>
+        <div class="form-group">
+            <label for="name" class="col-sm-2 control-label">群名片</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="name" name="name" placeholder="例如:YM.Lovelin">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="qq" class="col-sm-2 control-label">qq号</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="qq" name="qq" placeholder="请输入qq号">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="battleId" class="col-sm-2 control-label">战网ID</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="battleId" name="battleId" placeholder="例如:master#5273">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="level" class="col-sm-2 control-label">天梯段位</label>
+            <div class="col-sm-10">
+                <select class="form-control" id="level" name="level">
+                    <option value="A">青铜</option>
+                    <option value="B">白银</option>
+                    <option value="C">黄金</option>
+                    <option value="D">白金</option>
+                    <option value="E">钻石</option>
+                    <option value="F">大师</option>
+                    <option value="G">宗师</option>
+                </select>
+            </div>
+        </div>
+    </form>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button class="btn btn-default" onclick="savePerson()">保存</button>
+            <button class="btn btn-default" onclick="backIndex()">返回</button>
+        </div>
+    </div>
+</body>
+
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/person_add.js"></script>
+</html>

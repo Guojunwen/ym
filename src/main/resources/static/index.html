@@ -1,0 +1,44 @@
+<html lang=zh-CN>
+
+<head>
+    <meta charset=utf-8>
+    <title>YM队员信息</title>
+
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/css/bootstrap-reboot.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--<link href="http://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css" rel="stylesheet">-->
+    <link href="https://cdn.bootcss.com/jqgrid/4.6.0/css/ui.jqgrid.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="container" style="padding-top: 10px">
+    <div id="page-content">
+        <div class="form-group">
+            <button class="btn btn-default" onclick="addPerson()">
+                <i class="glyphicon glyphicon glyphicon-plus"></i>
+                <span class="bigger-110">添加个人信息</span>
+            </button>
+        </div>
+        <!--<table id="example" class="display" cellspacing="0" width="100%">-->
+            <!--<thead>-->
+            <!--<tr>-->
+                <!--<th>name</th>-->
+                <!--<th>qq</th>-->
+                <!--<th>battleId</th>-->
+                <!--<th>level</th>-->
+            <!--</tr>-->
+            <!--</thead>-->
+        <!--</table>-->
+        <table id="grid"></table>
+        <div id="grid-pager"></div>
+    </div>
+</div>
+</body>
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta.2/js/bootstrap.bundle.min.js"></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="http://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.bootcss.com/jqgrid/4.6.0/js/jquery.jqGrid.src.js"></script>
+<script src="https://cdn.bootcss.com/jqgrid/4.6.0/js/i18n/grid.locale-cn.js"></script>
+<script src="js/index.js"></script>
+</html>

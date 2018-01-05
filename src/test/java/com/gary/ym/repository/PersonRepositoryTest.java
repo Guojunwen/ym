@@ -1,6 +1,8 @@
 package com.gary.ym.repository;
 
 import com.gary.ym.dataobject.Person;
+import com.gary.ym.enums.LevelEnum;
+import com.gary.ym.utils.KeyUtil;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,9 +24,9 @@ public class PersonRepositoryTest {
     @Test
     public void saveTest(){
         Person person=new Person();
-        person.setId("001");
+        person.setId(KeyUtil.genUniqueKey());
         person.setBattleId("master#5273");
-        person.setLevel("A");
+        person.setLevel(LevelEnum.diamond.getCode());
         person.setQq("1622985514");
         person.setName("master");
         person.setCreateTime(new Date());
