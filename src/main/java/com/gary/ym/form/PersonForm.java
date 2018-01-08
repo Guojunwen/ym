@@ -16,7 +16,7 @@ public class PersonForm {
     @NotEmpty(message="QQ必填")
     private String qq;
     @NotEmpty(message="战网Id必填")
-    private String battlenetId;//战网Id
+    private String battleId;//战网Id
     @NotEmpty(message="段位必填")
     private String level;//段位
 }
