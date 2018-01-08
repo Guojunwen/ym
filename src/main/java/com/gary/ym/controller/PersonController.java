@@ -33,7 +33,7 @@ public class PersonController {
 
     @RequestMapping("/list")
     @ResponseBody
-    public List<Person> list(Integer rows,Integer page,String sidx,String sord) {
+    public List<Person> list(String name,Integer rows,Integer page,String sidx,String sord) {
         Sort sort;
         if ("desc".equals(sord)){
             sort = new Sort(Sort.Direction.DESC, sidx);
@@ -41,7 +41,7 @@ public class PersonController {
             sort = new Sort(Sort.Direction.ASC, sidx);
         }
         PageRequest pageRequest=new PageRequest(page-1,rows,sort);
-        Page<Person> personList=personService.findAll(pageRequest);
+        Page<Person> personList=personService.findLikeName(name,pageRequest);
         return personList.getContent();
     }
 
@@ -50,7 +50,7 @@ public class PersonController {
     @ResponseBody
     public ResultVO save(@Valid PersonForm personForm, BindingResult buildingResult){
         if (buildingResult.hasErrors()){
-            log.error("[添加队员] 参数不正确,orderForm={}"+personForm);
+            log.error("[添加队员] 参数不正确,personForm={}"+personForm);
             throw new YmException(ResultEnum.PARAM_ERROR.getCode(),
                     buildingResult.getFieldError().getDefaultMessage());
         }
@@ -60,10 +60,10 @@ public class PersonController {
         person.setId(KeyUtil.genUniqueKey());
         Person result=personService.save(person);
         if (result!=null){
-            log.info("[保存成功],orderForm={}"+personForm);
+            log.info("[保存成功],personForm={}"+personForm);
             return ResultVOUtil.success();
         }else{
-            log.error("[保存失败],orderForm={}"+personForm);
+            log.error("[保存失败],personForm={}"+personForm);
             return ResultVOUtil.error(500,"error");
         }
 

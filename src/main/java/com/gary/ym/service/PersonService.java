@@ -11,6 +11,8 @@ public interface PersonService {
 
     Page<Person> findAll(Pageable pageable);
 
+    Page<Person> findLikeName(String name,Pageable pageable);
+
     Person save(Person person);
 
     List<Person> findByLevel(String Level);

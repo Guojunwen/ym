@@ -27,6 +27,11 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
+    public Page<Person> findLikeName(String name,Pageable pageable) {
+        return repository.findByNameContains(name,pageable);
+    }
+
+    @Override
     public Person save(Person person) {
         return repository.save(person);
     }

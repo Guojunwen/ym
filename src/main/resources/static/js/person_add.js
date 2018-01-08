@@ -7,7 +7,7 @@ function backIndex() {
 function savePerson() {
     var params = $("#editForm").serialize();
     $.ajax({
-        url: "http://47.94.172.105:8080/ym/sys/person/save",
+        url: "sys/person/save",
         data: params,
         dataType:"json",
         success: function (result) {
