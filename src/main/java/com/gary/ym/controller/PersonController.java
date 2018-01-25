@@ -5,6 +5,7 @@ import com.gary.ym.enums.ResultEnum;
 import com.gary.ym.exception.YmException;
 import com.gary.ym.form.PersonForm;
 import com.gary.ym.service.PersonService;
+import com.gary.ym.utils.JqgridPage;
 import com.gary.ym.utils.KeyUtil;
 import com.gary.ym.utils.ResultVOUtil;
 import com.gary.ym.vo.ResultVO;
@@ -33,7 +34,7 @@ public class PersonController {
 
     @RequestMapping("/list")
     @ResponseBody
-    public List<Person> list(String name,Integer rows,Integer page,String sidx,String sord) {
+    public JqgridPage<Person> list(String name,Integer rows,Integer page,String sidx,String sord) {
         Sort sort;
         if ("desc".equals(sord)){
             sort = new Sort(Sort.Direction.DESC, sidx);
@@ -41,8 +42,14 @@ public class PersonController {
             sort = new Sort(Sort.Direction.ASC, sidx);
         }
         PageRequest pageRequest=new PageRequest(page-1,rows,sort);
+        if(name==null){
+            name="";
+        }
         Page<Person> personList=personService.findLikeName(name,pageRequest);
-        return personList.getContent();
+        JqgridPage<Person> personJqgridPage=new JqgridPage<>();
+        personJqgridPage.setRows(personList.getContent());
+        personJqgridPage.setTotPage(personList.getTotalPages());
+        return personJqgridPage;
     }
 
 
