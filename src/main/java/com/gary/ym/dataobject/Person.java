@@ -19,4 +19,6 @@ public class Person {
 
     private String level;//段位
 
+    private Integer mmr;//MMR
+
 }
