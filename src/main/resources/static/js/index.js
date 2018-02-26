@@ -13,7 +13,7 @@ function initGrid() {
         colModel: [
             {name: 'id', label: 'id', hidden: true, width: 40},
             {name: 'name', label: '群名片', editable: true, width: 170},
-            {name: 'qq', label: '战网ID', editable: true, width: 100},
+            {name: 'qq', label: 'QQ号', editable: true, width: 100},
             {name: 'battleId', label: '战网ID', editable: true, width: 180},
             {name: 'level', label: '段位', editable: true, width: 100,
                 formatter:function (cellValue, options, rowObject) {

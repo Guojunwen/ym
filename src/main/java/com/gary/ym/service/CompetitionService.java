@@ -9,7 +9,7 @@ public interface CompetitionService {
 
     Page<Competition> findAll(Pageable pageable);
 
-    Page<Competition> findLikeName(String name, Pageable pageable);
+    Page<Competition> findLikeTitle(String name, Pageable pageable);
 
     Competition save(Competition person);
 }

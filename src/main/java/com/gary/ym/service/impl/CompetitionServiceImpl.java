@@ -31,8 +31,8 @@ public class CompetitionServiceImpl implements CompetitionService {
     }
 
     @Override
-    public Page<Competition> findLikeName(String name, Pageable pageable) {
-        return null;
+    public Page<Competition> findLikeTitle(String name, Pageable pageable) {
+        return repository.findByTitleContains(name,pageable);
     }
 
     @Override
